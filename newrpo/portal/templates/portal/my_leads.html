@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+    <title>My Leads </title>
+{% endblock %}
+
+{% block content %}
+    <br>
+
+    <div class="jumbotron container text-center">
+        <h2> All Leads : {{leads.count }}</h2>
+        <table class="table table-bordered ">
+            <tr>
+                <td>Sr No.</td>
+                <td>Name</td>
+                <td>Date</td>
+            </tr>
+            {% for lead in leads %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{lead.Prospect.Name}}</td>
+                    <td>{{lead.Lead_On}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
+
